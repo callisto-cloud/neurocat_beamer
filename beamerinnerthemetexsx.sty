@@ -1,0 +1,51 @@
+\mode<presentation>
+\usepackage{graphicx}
+%\pgfdeclareimage[width=0.1\paperwidth,height=0.1\paperheight]{bg}{cat1}
+\vskip2cm%
+\logo{\includegraphics[scale=0.5]{cat1}}
+\setbeamertemplate{background}{	
+	%\pgfuseimage{bg}
+  	
+  \begin{tikzpicture}
+  %background for titlepage
+  \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+  \fill[color=black] (0,0.27*\the\paperheight) rectangle (\the\paperwidth,0.72*\the\paperheight);
+\logo{includegraphics{cat1}}
+  %background for other pages
+  \ifnum\thepage>1\relax%
+  \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+   \fill[color=black] (0,0.85*\the\paperheight)  rectangle(\the\paperwidth,\the\paperheight);
+   \fi
+  \end{tikzpicture}
+   
+  	}
+
+% Title page
+\defbeamertemplate*{title page}{texsx}[1][]
+{ 
+
+   \begin{center}
+   	\vskip2cm%
+    \begin{beamercolorbox}[wd=12cm,center,sep=0pt,#1]{title page header}
+      %\usebeamerfont{title}
+    \fontsize{23}{11}\selectfont\inserttitle\par%
+    \end{beamercolorbox}%
+	
+  \end{center}
+}
+ 
+ 
+
+% Frame title
+\defbeamertemplate{frametitle}{texsx}[1][]
+{
+	\vskip0.5cm%
+	\begin{beamercolorbox}[wd=12cm,sep=0pt]{frametitle}
+		\fontsize{23}{11}\selectfont\insertframetitle\par%
+	\end{beamercolorbox}
+	
+	
+}
+
+\mode
+<all>
