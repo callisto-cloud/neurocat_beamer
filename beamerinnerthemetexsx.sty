@@ -1,11 +1,10 @@
 \mode<presentation>
 \usepackage{graphicx}
 %\pgfdeclareimage[width=0.1\paperwidth,height=0.1\paperheight]{bg}{cat1}
-\vskip2cm%
-\logo{\includegraphics[scale=0.5]{cat1}}
+%\logo{\includegraphics[scale=0.5]{cat1}}
+
 \setbeamertemplate{background}{	
 	%\pgfuseimage{bg}
-  	
   \begin{tikzpicture}
   %background for titlepage
   \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
@@ -17,21 +16,30 @@
    \fill[color=black] (0,0.85*\the\paperheight)  rectangle(\the\paperwidth,\the\paperheight);
    \fi
   \end{tikzpicture}
+   \begin{tikzpicture}[overlay,remember picture,inner sep=0pt, outer sep=0pt]
+   \node[anchor=south,xshift=-30pt] at (current page.south east) {\includegraphics[height=1.5cm]{cat1}};
+   \end{tikzpicture}
    
   	}
 
 % Title page
 \defbeamertemplate*{title page}{texsx}[1][]
 { 
-
+	
+	%includes logo at the right bottom
+	\begin{tikzpicture}[overlay,remember picture,inner sep=0pt, outer sep=0pt]
+	\node[anchor=south,xshift=-30pt] at (current page.south east) {\includegraphics[height=1.5cm]{cat1}};
+	\end{tikzpicture}
    \begin{center}
-   	\vskip2cm%
+   	\vskip1.5cm%
+    %defines textbox for title 
     \begin{beamercolorbox}[wd=12cm,center,sep=0pt,#1]{title page header}
       %\usebeamerfont{title}
-    \fontsize{23}{11}\selectfont\inserttitle\par%
+    \fontsize{0.52cm}{11}\selectfont\inserttitle\par%
     \end{beamercolorbox}%
 	
   \end{center}
+
 }
  
  
@@ -39,13 +47,33 @@
 % Frame title
 \defbeamertemplate{frametitle}{texsx}[1][]
 {
-	\vskip0.5cm%
+	
+	\vskip0.7cm%
 	\begin{beamercolorbox}[wd=12cm,sep=0pt]{frametitle}
-		\fontsize{23}{11}\selectfont\insertframetitle\par%
+		\fontsize{0.52cm}{11}\selectfont\insertframetitle\par%
 	\end{beamercolorbox}
 	
 	
 }
+%https://tex.stackexchange.com/questions/18870/defining-an-new-itemize-like-environment-where-itemfoo-passes-foo-to-a-macro
+%itemsize with large text
+\newenvironment{itemizel}{%
+	\fontsize{18}{11}\selectfont\itemize
+	
+}{%
+	\enditemize
+}
+%itemsize with small text
+\newenvironment{itemizes}{%
+	\fontsize{9}{11}\selectfont\itemize
+	\let\@itemlabel\textbullet
+}{%
+	\enditemize
+}
+%\newcommand{\fooitem}{\insertitem}
+%\renewcommand{itemsize}{\begin{itemsize}[label=\textcolor{black}]}
+%\newenvironment{fooitemize}\begin{itemize}\end{itemize}
+%https://books.google.de/books?id=iX9MAQAAQBAJ&pg=PA128&lpg=PA128&dq#v=onepage&q&f=false
 
 \mode
 <all>
