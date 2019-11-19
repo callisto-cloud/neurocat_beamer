@@ -1,0 +1,57 @@
+\documentclass{article}
+    % General document formatting
+    \usepackage[margin=0.7in]{geometry}
+    \usepackage[parfill]{parskip}
+    \usepackage[utf8]{inputenc}
+   
+    % Related to math
+    \usepackage{amsmath,amssymb,amsfonts,amsthm}
+	
+	%required for color changing
+	\usepackage{enumitem,xcolor}
+\begin{document}
+%default itemize
+\begin{itemize}
+	\item one
+	\item two
+	\item three
+\end{itemize}
+%change color and symbol of label
+%symbol can be for example: square,triangle,circle,star,blacksquare,blacktriangle
+\begin{itemize}[label=\textcolor{blue}{$\blacktriangle$}]
+	\item one
+	\item two
+	\item three
+\end{itemize}
+%letters,symbols or nothing as label 
+\begin{itemize}
+	\item[a] one
+	\item[?] two
+	\item[] three
+\end{itemize}
+%bigger or smaller text
+\begin{itemize}
+	\huge
+	\item one
+	\LARGE
+	\item two
+	\tiny
+	\item three
+\end{itemize}
+%changes the size of the labels
+%changes labels tiny bullet
+\begin{itemize}[label=\raisebox{0.25ex}{\tiny$\bullet$}]
+	\item one
+	\item two
+	\item three
+\end{itemize}
+%changes fontsize of items and space between each item
+%first number is fontsize second number is space between items in pt
+\begin{itemize}
+	\fontsize{30}{1cm}\selectfont
+	\item one
+	\item two
+	\item three
+	\end{itemize}
+
+\end{document}

@@ -1,0 +1,41 @@
+%globally changes fontsize 
+%only 10,11,12 are avialable 
+\documentclass[12pt]{article}
+    % General document formatting
+    \usepackage[margin=0.7in]{geometry}
+    \usepackage[parfill]{parskip}
+    \usepackage[utf8]{inputenc}
+    
+    % Related to math
+    \usepackage{amsmath,amssymb,amsfonts,amsthm}
+	
+	%package for coloring text
+	\usepackage{xcolor}
+	%loads font
+	\usepackage{emerald}
+	\usepackage[T1]{fontenc}
+	%avialable font list for LaTeX :https://www.tug.org/FontCatalogue/ 
+	%Xe
+\begin{document}
+%uses font
+\ECFIntimacy
+foo bar SPAM
+
+%changes fontsize
+
+\huge
+foo bar SPAM
+
+%first number is fontsize in pt and second number is linespace
+
+\fontsize{40}{45}\selectfont
+foo bar SPAM
+
+%changes color of text
+\textcolor{blue}{foo bar SPAM}
+\newline
+%defines rgb color and names it color1
+\definecolor{color1}{RGB}{114,218,225}
+%textcolor uses defined color
+\textcolor{color1}{foo bar SPAM}
+\end{document}
