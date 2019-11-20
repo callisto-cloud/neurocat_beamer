@@ -6,9 +6,30 @@
    
     % Related to math
     \usepackage{amsmath,amssymb,amsfonts,amsthm}
-	
+
 	%required for color changing
 	\usepackage{enumitem,xcolor}
+	
+	
+\makeatletter
+\newcommand{\pp}{}% check it's not defined
+\DeclareRobustCommand{\pp}{\mathbin{\mathpalette\pp@\relax}}
+\newcommand\pp@[2]{%
+	\mspace{0.5mu}%
+	\vcenter{\hbox{\sbox\z@{$#1.$}\rule{2\ht\z@}{2\ht\z@}}}%
+	\mspace{0.5mu}%
+}
+\makeatother
+
+\makeatletter
+\newcommand{\blub}{}% check it's not defined
+\DeclareRobustCommand{\blub}{\mathbin{\mathpalette\blub@\relax}}
+\newcommand\blub@[2]{%
+	\mspace{0.5mu}%
+	\vcenter{\hbox{\sbox\z@{$#1.$}\rule{4\ht\z@}{4\ht\z@}}}%
+	\mspace{0.5mu}%
+}
+\makeatother
 \begin{document}
 %default itemize
 \begin{itemize}
@@ -58,5 +79,18 @@
 \begin{itemize}[labelsep=5.5\labelsep]
 	\item bla
 	\item blub
+\end{itemize}
+\section*{Markersize}
+
+\begin{itemize}
+	\item[$\pp$] q
+	\item[$\pp$] t
+\end{itemize}
+
+\begin{itemize}
+	%\fontsize{30}{1cm}\selectfont
+	\item[$\blub$] $|$
+	\item[$\blub$] t
+	\item[$\blub$] p
 \end{itemize}
 \end{document}
