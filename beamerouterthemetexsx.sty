@@ -3,10 +3,11 @@
 % Frame title
 \defbeamertemplate*{frametitle}{texsx}[1][]
 {
-	\vskip0.7cm%
-	\begin{beamercolorbox}[wd=12cm,sep=0pt]{frametitle}
-		\fontsize{0.52cm}{11}\selectfont\insertframetitle\par%
-	\end{beamercolorbox}
+	\begin{beamercolorbox}[wd=.70\paperwidth,left,sep=0pt]{frametitle}%
+		\vbox{}\vskip-1ex%
+		\selectfont\insertframetitle
+		\vskip-1ex%
+	\end{beamercolorbox}%
 }
 
 \mode
