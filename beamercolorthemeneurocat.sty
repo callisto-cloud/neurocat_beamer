@@ -1,0 +1,29 @@
+\mode<presentation>
+
+
+\makeatletter
+\newcommand{\blackbox}{}% check it's not defined
+\DeclareRobustCommand{\blackbox}{\mathbin{\mathpalette\blackbox@\relax}}
+\newcommand\blackbox@[2]{%
+	\mspace{0.5mu}%
+	\vcenter{\hbox{\sbox\z@{$#1.$}\rule{4\ht\z@}{4\ht\z@}}}%
+	\mspace{0.5mu}%
+}
+\makeatother
+
+% Settings
+\setbeamercolor*{title page header}{fg=neurocatblue}
+\definecolor{neurocatblue}{RGB}{114,218,225} %defines color neccesary for titles
+\setbeamercolor*{normal text}{fg=black}
+\setbeamercolor*{author}{fg=white}
+\setbeamercolor*{date}{fg=white}
+\setbeamercolor*{frametitle}{fg=neurocatblue}
+
+\setbeamercolor*{itemize item}{fg=black}
+
+\newcommand\nctext[1]{{\color{neurocatblue}#1}}
+
+\setbeamertemplate{itemize item}{$\blackbox$}
+\setbeamertemplate{sections/subsections in toc}[square]
+\mode
+<all>
